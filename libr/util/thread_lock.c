@@ -68,11 +68,9 @@ R_API RThreadLock *r_th_lock_new(bool recursive) {
 	if (!thl) {
 		return NULL;
 	}
-
 	if (!lock_init (thl, recursive)) {
 		return NULL;
 	}
-
 	thl->type = R_TH_LOCK_TYPE_HEAP;
 	thl->active = 1;
 	thl->activating = 0;
